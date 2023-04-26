@@ -40,8 +40,9 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(array){
+  const arraycopy =array;
+  return arraycopy;
 }
 
 
@@ -55,9 +56,8 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 Örneğin: dizi25Cesit(orijinalTatlar) kodunuz düzgün çalışıyorsa true değerini döndürür.
 */
 
-
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(array){
+  return array.length==25;
 }
 
 
@@ -74,8 +74,11 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(array,yenitat){
+
+  array.splice(0,0,yenitat)
+  
+  return array;
 }
 
 
@@ -92,10 +95,10 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(array){
+ array.splice(array.length-1,1);
+ return array;
 }
-
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,7 +111,10 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
+function indekstekiCesitiGetir(array,sayı){
+
+  return array[sayı];
+
   /*kod buraya*/
 }
 
@@ -128,8 +134,11 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar,lezzetadı){
+  const index=tatlar.indexOf(lezzetadı);
+  tatlar.splice(index,1);
+  return tatlar
+  
 }
 
 
@@ -154,11 +163,17 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar,çikolata){
+   let yeniTatlar=[];
+   let i;
+   for(i=0;i<tatlar.length;i++){
+    if(tatlar[i].includes(çikolata)){
+      yeniTatlar.push(tatlar[i])
+    }
+   }
+  
+   return yeniTatlar;
 }
-
-
 
 /* ALIŞTIRMA */
 
